@@ -41,6 +41,20 @@ public class StackMass {
         else
             System.out.println("Даного эелемента нет:");
     }
+    static void notshowadd(ArrayList arr) {
+        System.out.println("Введите индекс для добавления в массив :");
+        Scanner scan1 = new Scanner(System.in);
+        int index = scan1.nextInt();
+        boolean str =arr.isEmpty();
+        if(str!=true && index < arr.size()){
+        System.out.println("Введите элемент для добавления в массив :");
+        Scanner scan = new Scanner(System.in);
+        int num = scan.nextInt();
+            arr.set(index,num);
+            System.out.println(arr);}
+            else
+                System.out.println("Даного индекса нет:");
+    }
     static void notshowsclear(ArrayList arr) {
         arr.clear();
         System.out.println("Массив пуст: " + arr);
@@ -96,7 +110,7 @@ public class StackMass {
     }
     public static void main(String[] args) {
         Stack stck = new Stack();
-        List<Integer> arr = new ArrayList<>();
+        List<Integer> arr = new ArrayList<>(1000);
         System.out.println("Выберите работу со стеком или с массивом.");
         System.out.println("1.Стек.");
         System.out.println("2.Массив.");
@@ -111,10 +125,11 @@ public class StackMass {
                 System.out.println("4.Удалить элемент из массива.");
                 System.out.println("5.Очистить массива.");
                 System.out.println("6.Элемент по индексу в массиве.");
+                System.out.println("7.Добавление элемента по индексу в массиве.");
                 System.out.println("0.Выход.");
                 Scanner scan1 = new Scanner(System.in);
                 int num1 = scan1.nextInt();
-                if (num1 == 1 || num1 == 2 || num1 == 3 || num1 == 4 || num1 == 5 || num1 == 6 || num1 == 0) {
+                if (num1 == 1 || num1 == 2 || num1 == 3 || num1 == 4 || num1 == 5 || num1 == 6 || num1 == 7 || num1 == 0) {
                     switch (num1) {
                         case 1: {
                             notshowpush1((ArrayList) arr);
@@ -138,6 +153,10 @@ public class StackMass {
                         }
                         case 6: {
                             notshowget((ArrayList) arr);
+                            break;
+                        }
+                        case 7:{
+                            notshowadd((ArrayList) arr);
                             break;
                         }
                         case 0: {
