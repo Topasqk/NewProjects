@@ -5,9 +5,8 @@ import java.util.Scanner;
 
 public class QueueMass {
     public static void main(String[] args) {
-        ArrayDeque que1 = new ArrayDeque();
-        ArrayDeque que2 = new ArrayDeque();
-        ;
+        ArrayDeque<Integer> que1 = new ArrayDeque<>();
+        ArrayDeque<Integer> que2 = new ArrayDeque<>();
         System.out.println("Введите сколько элементво добавить в очередь:");
         Scanner scan = new Scanner(System.in);
         int num = scan.nextInt();
@@ -30,7 +29,7 @@ public class QueueMass {
         int num2 = scan2.nextInt();
         y = que2.size();
         for (int i = 0; i < y; i++) {
-            if (num2 == (int) que2.peek()) {
+            if (num2 == que2.peek()) {
                 que2.poll();
             } else que1.add(que2.poll());
         }
@@ -40,7 +39,7 @@ public class QueueMass {
         int num3 = scan3.nextInt();
         y = que1.size();
         for (int i = 0; i < y; i++) {
-            if (num3 == (int) que1.peek()) {
+            if (num3 == que1.peek()) {
                 System.out.println("Число найденно:" + que1.peek());
                 que2.add(que1.poll());
             } else
