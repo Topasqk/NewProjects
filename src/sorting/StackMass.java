@@ -16,6 +16,12 @@ public class StackMass {
             System.out.println("Положили(" + num + ")");
         }
     }
+    static void notshowget(ArrayList arr){
+        System.out.println("Введите индекс элемента :");
+        Scanner scan = new Scanner(System.in);
+        int num = scan.nextInt();
+        System.out.println("Элемент по индексу:" + arr.get(num));
+    }
     static void notshowpop(ArrayList arr) {
             System.out.println("Массив: " + arr);
         }
@@ -104,10 +110,11 @@ public class StackMass {
                 System.out.println("3.Размерность массив.");
                 System.out.println("4.Удалить элемент из массива.");
                 System.out.println("5.Очистить массива.");
+                System.out.println("6.Элемент по индексу в массиве.");
                 System.out.println("0.Выход.");
                 Scanner scan1 = new Scanner(System.in);
                 int num1 = scan1.nextInt();
-                if (num1 == 1 || num1 == 2 || num1 == 3 || num1 == 4 || num1 == 5 || num1 == 0) {
+                if (num1 == 1 || num1 == 2 || num1 == 3 || num1 == 4 || num1 == 5 || num1 == 6 || num1 == 0) {
                     switch (num1) {
                         case 1: {
                             notshowpush1((ArrayList) arr);
@@ -127,6 +134,10 @@ public class StackMass {
                         }
                         case 5: {
                             notshowsclear((ArrayList) arr);
+                            break;
+                        }
+                        case 6: {
+                            notshowget((ArrayList) arr);
                             break;
                         }
                         case 0: {
