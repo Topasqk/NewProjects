@@ -221,7 +221,6 @@ public class StackMass {
         }
         else
             System.out.println("Не правильно выбрано значение");
-        return;
     }
 }
 
